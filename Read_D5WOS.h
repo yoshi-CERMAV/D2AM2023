@@ -33,7 +33,7 @@ public:
 
     void change_path(const char path[])
     {
-        strncpy(path_, path[], 255);
+        strncpy(path_, path, 255);
     }
     void change_file(const char filename[])
     {
