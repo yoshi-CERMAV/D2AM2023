@@ -1,3 +1,6 @@
+display_D2AM: display_D2AM.cpp
+	/usr/local/hdf5/bin/h5c++  -o display_D2AM display_D2AM.cpp -I/Users/yoshi/include -lX11 -framework Accelerate -Wno-c++11-extensions
+
 test1: test1.cc
 	/usr/local/hdf5/bin/h5c++  -o test1 test1.cc -I/Users/yoshi/include -lX11 check_mask.cpp ~/lib/Savitzky_Golay_2d.o -lfftw3 -framework Accelerate -Wno-c++11-extensions
 
