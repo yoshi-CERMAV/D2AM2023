@@ -22,7 +22,7 @@ public:
     read_h5(char filename[]);
     read_h5(){
         strncpy(path_,"/Users/yoshi/temp/putaux/",255);
-        strncpy(filename_, "sample3/sample3_0001/sample3_0001.h5");
+        strncpy(filename_, "sample3/sample3_0001/sample3_0001.h5",255);
         strncpy(D5fmt_,"/%d.1/measurement/D5", 255);
         strncpy(WOSfmt_,"/%d.1/measurement/WOS", 255);
         char full_path[255];
