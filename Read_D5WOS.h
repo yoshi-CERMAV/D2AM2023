@@ -39,7 +39,6 @@ public:
     {
         char full_path[255];
         strncpy(filename_,filename, 256);
-        char full_path[255];
         strncpy(full_path, path_, 255);
         strncat(full_path, filename_, 255);
         struct stat buf;
