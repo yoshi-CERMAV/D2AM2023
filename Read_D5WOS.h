@@ -59,9 +59,9 @@ public:
         DataSet dataset = file_->openDataSet(name);
         if( !dataset.getId() )
             {
-                std::runtime_error( "ReportReaderHDF5: "
-                                      "Dataset " + name + " not found "
-                                      "in file: " + file_.getFileName( )));
+    //            std::runtime_error( "ReportReaderHDF5: "
+    //                                  "Dataset " + name + " not found "
+    //                                  "in file: " + file_.getFileName( )));
                 return -1;
             }
         DataSpace dataspace = dataset.getSpace();

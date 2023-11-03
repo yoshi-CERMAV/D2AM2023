@@ -18,13 +18,13 @@ using namespace H5;
 using namespace std;
 using namespace cimg_library;
 enum mode {D5scale, WOSscale, scan_num, file_name, stepd5, stepWO, stepscan};
-map<unsigned int, enum> key_map{
+map<unsigned int, mode> key_map{
     {cimg::key1, D5scale},
     {cimg::key2, WOSscale},
     {cimg::key3, WOSscale},
-    {cimg::key4, WOSscale}
-    {cimg::key5, stepd5}
-    {cimg::key6, stepWO}
+    {cimg::key4, WOSscale},
+    {cimg::key5, stepd5},
+    {cimg::key6, stepWO},
     {cimg::key7, stepscan}
 };
 int canvas_x = 600;
@@ -143,9 +143,9 @@ void init_menu(CImg<unsigned char > * img_ptr)
     values[6].set(scan_step);
 
 }
-void select(int i)
+void select_menu(int i)
 {
-    if (i != current_menu ){
+    if (i != current_menu){
         menus[current_menu].unselect();
         menus[i].select();
         current_menu= i;
@@ -186,15 +186,6 @@ int fill1(unsigned char *c, int x, int y){
     }
 }
 
-void run_select(unsigned int key)
-{
-case cimg::key1:
-    if(select != D5scale){
-        menus[select].unselect();
-        select = D5scale;
-        menus[select].select();
-
-}
 
 int main(int argc, char *argv[])
 {
@@ -228,7 +219,10 @@ int main(int argc, char *argv[])
     set_value(0, D5_scale);
     init_menu(& the_img);
     while (!main_disp.is_closed()){
+        select_menu(key_map[main_disp.key()]);
+#ifdef AAAA
         switch (main_disp.key()) {
+                
             case 0: break;
             case cimg::key1:
                 if(select != D5scale){
@@ -277,7 +271,7 @@ int main(int argc, char *argv[])
 
             default: break;
         }
-
+#endif
         if (main_disp.is_keyARROWUP()) {
             switch(select){
                 case D5scale:

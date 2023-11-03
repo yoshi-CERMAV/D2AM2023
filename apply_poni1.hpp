@@ -594,7 +594,7 @@ public:
                 double my_bg =bg[p];
                 double my_data = dat[p];
                 double my_sum = my_bg + my_data;
-                if(isnan(my_bg) || isnan(my_data){
+                if(isnan(my_bg) || isnan(my_data)){
                     A[i] = y[i] = A1[i] = A2[i] = 0;
                     continue;
                 }
